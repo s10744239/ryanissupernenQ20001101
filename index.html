@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的個人網站</title>
+  <!-- AOS (滾動動畫) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Typed.js 打字機效果 -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+	
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #2c3e50;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+	
+.about-photo {
+    width: 100px;       
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+    /* 呼吸 + 漂浮動畫 */
+    animation: breathe 4s infinite ease-in-out, floatPhoto 6s infinite ease-in-out;
+    margin: 15px 0; /* 照片上下間距 */
+	}
+	/* 呼吸動畫 */
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* 微微上下漂浮 */
+@keyframes floatPhoto {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+    .portfolio, .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      background: #fafafa;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    form input, form textarea, form button {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1em;
+    }
+    form button {
+      background: #2c3e50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #34495e;
+    }
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    .social a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><span id="typed"></span></h1>
+    <nav>
+      <a href="#about">關於我</a>
+      <a href="#portfolio">作品集</a>
+      <a href="#gallery">圖片集</a>
+      <a href="#contact">聯絡我</a>
+    </nav>
+  </header>
+
+  <section id="about" data-aos="fade-up">
+    <h2>關於我</h2><br>
+	 <img src="頭貼.jpg" alt="江芷璇" class="about-photo">
+    <p>嗨！我是 江芷璇，睡之呼吸使用者，這是我的個人網站。</p>
+  </section>
+
+  <section id="portfolio" data-aos="fade-right">
+    <h2>招式</h2>
+    <div class="portfolio">
+	<div class="card">
+    <h3>一之型：一直睡</h3>
+    <p>本能入眠，任敵怎麼打都打不醒，反而藉由深層睡眠提升身體自癒力。</p>
+    <a href="一之型.html">了解更多</a>
+	</div>
+
+	<div class="card">
+    <h3>二之型：夢遊斬</h3>
+    <p>邊睡邊走邊揮刀，看似胡亂出招，但因潛意識操縱，攻擊軌跡詭異難測。</p>
+    <a href="project2.html">了解更多</a>
+	</div>
+
+	<div class="card">
+    <h3>三之型：安眠領域</h3>
+    <p>散發強烈的睡意氣場，讓周圍的敵人逐漸失去精神，忍不住昏昏欲睡。</p>
+    <a href="project3.html">了解更多</a>
+	</div>
+
+	<div class="card">
+    <h3>四之型：翻身破</h3>
+    <p>在睡夢中突然翻身，身體如陀螺般旋轉揮斬，帶來意想不到的全方位攻擊。</p>
+    <a href="project4.html">了解更多</a>
+	</div>
+
+	<div class="card">
+    <h3>五之型：夢境連擊</h3>
+    <p>進入夢境後進行一連串高速連斬，實際中敵人會感覺像被瞬移般連續攻擊。</p>
+    <a href="project5.html">了解更多</a>
+	</div>
+
+	<div class="card">
+    <h3>六之型：永眠寂滅</h3>
+    <p>最終奧義。將自己與敵人拉入無限夢境空間，在夢裡無止境地消耗對方意志，直到敵人心神崩潰。</p>
+    <a href="project6.html">了解更多</a>
+	</div>	  
+	  
+    </div>
+	
+	
+	
+	
+	
+	
+  </section>
+
+
+
+
+
+
+
+
+  <section id="gallery" data-aos="zoom-in">
+    <h2>圖片集</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200" alt="示意圖片1">
+      <img src="https://via.placeholder.com/300x200" alt="示意圖片2">
+      <img src="https://via.placeholder.com/300x200" alt="示意圖片3">
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-up">
+    <h2>聯絡我</h2>
+    <form action="mailto:你的信箱@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="你的名字" required>
+      <input type="email" name="email" placeholder="你的 Email" required>
+      <textarea name="message" rows="5" placeholder="你的訊息" required></textarea>
+      <button type="submit">送出</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 我的個人網站</p>
+    <div class="social">
+      <a href="https://github.com/你的帳號">GitHub</a>
+      <a href="https://linkedin.com/in/你的帳號">LinkedIn</a>
+      <a href="resume.pdf" download>下載履歷</a>
+    </div>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    new Typed("#typed", {
+      strings: ["嗨！歡迎來到我的個人網站 🚀", "我是 XXX，一起來看看我的作品吧！"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+  </script>
+
+</body>
+</html>

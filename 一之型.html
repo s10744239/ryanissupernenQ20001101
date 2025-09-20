@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睡之呼吸 一之型：一直睡</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: white;
+            font-family: "Noto Sans TC", sans-serif;
+            text-align: center;
+            overflow: hidden;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 3em;
+            animation: glow 2s infinite alternate;
+            letter-spacing: 5px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.85;
+        }
+
+        /* 星星背景 */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            animation: moveStars 60s linear infinite;
+            z-index: -1;
+        }
+
+        /* 睡覺角色 */
+        .character {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: url("頭貼.jpg") no-repeat center/cover;
+    animation: breathe 4s infinite ease-in-out;
+    box-shadow: 0 0 40px rgba(255,255,255,0.3);
+
+    /* 加下面這幾行，讓它置中 */
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+        }
+
+        /* 眼睛 */
+        .character::before,
+        .character::after {
+            content: "";
+            position: absolute;
+            width: 45px;
+            height: 6px;
+            background: #222;
+            border-radius: 5px;
+            top:70px;
+        }
+        .character::before { left: 30px; }
+        .character::after { right: 30px; }
+
+        /* 呼吸氣場 */
+        .aura {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 3px solid rgba(100, 200, 255, 0.6);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 4s infinite;
+        }
+
+        /* Zzz */
+        .zzz {
+            position: absolute;
+			font-size: 5em;
+			color: #fff;
+			text-shadow: 0 0 10px #55f, 0 0 20px #88f;
+			opacity: 0.7;
+			animation: floatUp 6s infinite;
+			left: 55%;                /* 水平中心 */
+			transform: translateX(-50%); /* 修正置中 */
+        }
+        .zzz:nth-child(1) { left: 60%; animation-delay: 0s; }
+        .zzz:nth-child(2) { left: 65%; animation-delay: 1s; font-size: 2.5em; }
+        .zzz:nth-child(3) { left: 70%; animation-delay: 2s; font-size: 1.8em; }
+
+        /* 動畫效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #66f, 0 0 40px #99f; }
+            to { text-shadow: 0 0 40px #55f, 0 0 80px #ccf; }
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+        }
+
+        @keyframes floatUp {
+	0% {
+        bottom: 120px;
+        opacity: 0;
+        transform: translateX(-50%) scale(1) rotate(0deg);
+        text-shadow: 0 0 10px #55f, 0 0 20px #88f;
+    }
+    25% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2) rotate(-10deg);
+        text-shadow: 0 0 20px #66f, 0 0 40px #99f;
+    }
+    50% {
+        transform: translateX(-50%) scale(1) rotate(10deg);
+        opacity: 0.8;
+        text-shadow: 0 0 30px #55f, 0 0 60px #bbf;
+    }
+    75% {
+        transform: translateX(-50%) scale(1.3) rotate(-15deg);
+        opacity: 0.6;
+        text-shadow: 0 0 40px #66f, 0 0 80px #ccf;
+    }
+    100% {
+        bottom: 500px;
+        opacity: 0;
+        transform: translateX(-50%) scale(1) rotate(0deg);
+        text-shadow: 0 0 10px #55f, 0 0 20px #88f;
+    }
+        }
+
+        @keyframes moveStars {
+            from { background-position: 0 0; }
+            to { background-position: -10000px 5000px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <h1>睡之呼吸・一之型：一直睡</h1>
+    <p>本能入眠，任敵怎麼打都打不醒，反而藉由深層睡眠提升身體自癒力。</p>
+    
+    <div class="character"></div>
+    <div class="aura"></div>
+
+    <div class="zzz">Z</div>
+    <div class="zzz">Z</div>
+    <div class="zzz">Z</div>
+</body>
+</html>
